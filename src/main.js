@@ -26,6 +26,16 @@ import { Aquarium } from './ui/Aquarium.js';
 
 import { Boat } from './vehicle/Boat.js';
 
+const loadingScreen = document.getElementById("loading");
+
+let gameStarted = false;
+
+loadingScreen.addEventListener("click", () => {
+  document.body.requestPointerLock();
+
+  loadingScreen.style.display = "none";
+  gameStarted = true;
+});
 // ENGINE CORE
 const engine = new Engine();
 const input = new Input();
