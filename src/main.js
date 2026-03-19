@@ -77,7 +77,8 @@ let fishingPhase = "idle";
 // idle → waiting → shake → bar → caught
 
 // MAIN LOOP
-engine.register((delta) => {
+engine.register((delta) => { 
+  if (!gameStarted) return;
   time.update(delta);
 
   // WORLD
